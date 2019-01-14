@@ -1,0 +1,38 @@
+Number of companies:
+2
+(id,name,city):
+3
+comp1
+city1
+Employee Count:
+3
+Employee 1 details (id,name,age):
+3
+name1
+35
+Employee 2 details (id,name,age):
+2
+name2
+27
+Employee 3 details (id,name,age):
+1
+name3
+29
+(id,name,city):
+2
+com2
+city2
+Employee Count:
+0
+CITY2
+
+ID2 Namecom2 Citycity2
+Company ID to list emloyees:
+3
+Employees Below 30:
+ID:2 Name:name2 Age27
+ID:1 Name:name3 Age29
+Employees By Age
+ID:2 Name:name2 Age27
+ID:1 Name:name3 Age29
+ID:3 Name:name1 Age35
