@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PersonMainService WSDL service -->
+
+  <service name="PersonMain" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soap.com"/>
+      <parameter name="wsdlServiceElement" value="PersonMainService"/>
+      <parameter name="schemaQualified" value="http://soap.com"/>
+      <parameter name="wsdlServicePort" value="PersonMain"/>
+      <parameter name="className" value="com.soap.PersonMain"/>
+      <parameter name="wsdlPortType" value="PersonMain"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://soap.com" xmlns:retNS="http://soap.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updatePerson" qname="operNS:updatePerson" returnQName="retNS:updatePersonReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.com" xmlns:retNS="http://soap.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deletePerson" qname="operNS:deletePerson" returnQName="retNS:deletePersonReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.com" xmlns:retNS="http://soap.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="findPersonById" qname="operNS:findPersonById" returnQName="retNS:findPersonByIdReturn" returnType="rtns:anyType" soapAction="">
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.com" xmlns:retNS="http://soap.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="findPersonByName" qname="operNS:findPersonByName" returnQName="retNS:findPersonByNameReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.com" name="createPerson" qname="operNS:createPerson" soapAction="">
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+        <parameter xmlns:pns="http://soap.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="deletePerson findPersonById findPersonByName createPerson updatePerson"/>
+
+      <typeMapping xmlns:ns="http://soap.com" qname="ns:&gt;createPersonResponse" type="java:com.soap.CreatePersonResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.com" qname="ns:&gt;findPersonByName" type="java:com.soap.FindPersonByName" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.com" qname="ns:&gt;createPerson" type="java:com.soap.CreatePerson" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.com" qname="ns:&gt;findPersonByNameResponse" type="java:com.soap.FindPersonByNameResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
