@@ -1,0 +1,16 @@
+Difference Between Factory Pattern and Abstract Factory Pattern
+
+Definition:
+Factory pattern is a creational pattern that uses a method to deal with the problem of creating objects without having to specify the exact class of the object that will be created. 
+Abstract factory pattern, on the other hand, is a pattern that provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes. 
+Thus, these definitions explain the main difference between factory pattern and abstract factory pattern.
+
+Hiding the Construction
+Another difference between factory pattern and abstract factory pattern is that the factory pattern hides the construction of a single object 
+while abstract factory pattern hides the construction of a family of related objects.
+
+Conclusion
+Factory pattern and Abstract Factory pattern are two creational design patterns. 
+Factory pattern provides a method of creating objects without specifying the exact class used to create it. 
+In contrast, abstract factory pattern provides a method to combine a group of individual factories without specifying their concrete classes. 
+Therefore, this is the main difference between factory pattern and abstract factory pattern.
