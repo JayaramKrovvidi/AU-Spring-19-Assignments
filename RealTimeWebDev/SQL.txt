@@ -1,0 +1,17 @@
+create database fullstack;
+use fullstack;
+create table book(
+	bookId int primary key,
+    bookName varchar(20) not null,
+    authorName varchar(20),
+    bookPrice int not null,
+    bookDesc varchar(20)
+);
+
+insert into book values(1, "b1", "a1", 20, "d1");
+insert into book values(2, "b2", "a2", 30, "d2");
+
+create table checkout(
+	id int primary key,
+    name varchar(20)
+);

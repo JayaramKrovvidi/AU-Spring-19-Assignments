@@ -1,0 +1,24 @@
+.booklist{
+    li{
+        padding-bottom: 10px;
+    }
+    overflow-x: auto;
+    width: 40%;
+    max-height: 378px;;
+    text-align: left;
+    float: left;
+    margin-top: 70px;
+    background-color: beige;
+    border-radius: 5px;
+    #btn{
+        align:right;
+        width: 90px;
+        height: 30px;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+#rightcol{
+    float: left;
+    width: 60%;
+}

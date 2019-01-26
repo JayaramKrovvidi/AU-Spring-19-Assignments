@@ -1,0 +1,15 @@
+<p class="sectionHeader">
+  <span class="books">
+    Search for books!
+  </span>
+</p>
+<p>
+<input type="text" name="bookid" [(ngModel)]="id" placeholder="Mention book id to search" ><br> 
+<button (click)="searchBook()" class="btn btn-success">Search book</button>
+</p>
+<br>
+<br>
+<br>
+<span *ngIf="book && book.bookName">
+    <a [routerLink]="['/book',book.id]" routerLinkActive="active">{{ book.bookName }}</a>
+</span>
